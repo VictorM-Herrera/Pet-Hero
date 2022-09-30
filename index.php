@@ -7,10 +7,6 @@
     <title>Inicio</title>
 </head>
 <body>
-    <h1>Titulo</h1>
-    <p>Hola</p>
-    <p>HEllo</p>
-    <p>Hi</p>
     
 </body>
 </html>
