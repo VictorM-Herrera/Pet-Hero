@@ -1,0 +1,1 @@
+En esta carpeta van cosas que no tengan que ver con los modelos, ej: exepciones.
