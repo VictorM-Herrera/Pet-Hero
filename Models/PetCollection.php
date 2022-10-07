@@ -1,7 +1,11 @@
 <?php 
 namespace Models;
 require_once "DAO/IPetCollection.php";
-require_once "Models/Pet.php";
+/*require_once "Models/Pet.php";
+
+use Models\Pet as Pet;
+use DAO\IPetCollection as IPetCollection;*/
+
 class PetCollection implements IPetCollection
 {
     private $petArray;
