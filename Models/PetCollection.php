@@ -1,10 +1,8 @@
 <?php 
 namespace Models;
-require_once "DAO/IPetCollection.php";
-/*require_once "Models/Pet.php";
-
+require_once ("../Config/Autoload.php");
 use Models\Pet as Pet;
-use DAO\IPetCollection as IPetCollection;*/
+use DAO\IPetCollection as IPetCollection;
 
 class PetCollection implements IPetCollection
 {

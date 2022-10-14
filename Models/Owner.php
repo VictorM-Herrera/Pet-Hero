@@ -1,9 +1,8 @@
 <?php 
 namespace Models;
-/*require_once "Models/User.php";
-require_once "Models/PetCollection.php";
 
-use Models\PetCollection as PetCollection;*/
+use Models\User as User;
+use Models\PetCollection as PetCollection;
 
 class Owner extends User{
     private $petList;
@@ -13,22 +12,12 @@ class Owner extends User{
     {
         $petList = new PetCollection();
     }
-    
-    
 
-    /**
-     * Get the value of reputation
-     */ 
     public function getReputation()
     {
         return $this->reputation;
     }
-
-    /**
-     * Set the value of reputation
-     *
-     * @return  self
-     */ 
+ 
     public function setReputation($reputation)
     {
         $this->reputation = $reputation;
@@ -36,19 +25,11 @@ class Owner extends User{
         return $this;
     }
 
-    /**
-     * Get the value of petList
-     */ 
     public function getPetList()
     {
         return $this->petList;
     }
 
-    /**
-     * Set the value of petList
-     *
-     * @return  self
-     */ 
     public function setPetList($petList)
     {
         $this->petList = $petList;
