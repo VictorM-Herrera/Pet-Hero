@@ -1,3 +1,18 @@
+<?php
+require_once("Config\Autoload.php");
+use Repository\OwnerRepository as OwnerRepository;
+use Models\Owner as Owner;
+$repo= new OwnerRepository();
+$ow1= new Owner();
+$ow1->setName("qwe");
+$ow1->setLastName("rsq");
+$ow1->setEmail("asd@qwe");
+
+
+$repo->Add($ow1);
+var_dump($repo->GetAll());
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
