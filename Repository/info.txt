@@ -1,0 +1,1 @@
+los repositorios, (clases que cumplen el pasaje a de JSON a php y viceversa)
