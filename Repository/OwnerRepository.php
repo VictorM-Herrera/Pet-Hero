@@ -3,30 +3,31 @@ namespace Repository;
 require_once("..\Config\Autoload.php");
 
 use Models\Owner as Owner;
-use DAO\Irepository as Irepository;
-class OwnerRepository implements IRepository
+class OwnerRepository
 {
-    private $OwnerList= array();
-    private $FileName;
-    public function _construct()
+    private $ownerList = array();
+    private $fileName;
+
+    public function __construct()
     {
-        $this->FileName= dirname(__DIR__)."Data/Owner.json";
+        $this->fileName= dirname(__DIR__)."/DATA/owners.json";
     }
-    public function Add(Owner $owner)
+    public function add(Owner $owner)
     {
-        $this->RetrieveData;
-        array_push($this->OwnerList, $owner);
-        $this->SaveData;
+        $this->retrieveData();
+        array_push($this->ownerList, $owner);
+        $this->saveData();
     }
-    public function GetAll()
+    public function getAll()
     {
-        $this->RetrieveData();
-        return $this->OwnerList;
+        $this->retrieveData();
+        return $this->ownerList;
     }
-    public function SaveData()
+    //PHP TO JSON
+    private function saveData()
     {
-        $arraytoencode= array();
-        foreach($this->OwnerList as $Owner)
+        $arrayToEncode= array();
+        foreach($this->ownerList as $Owner)
         {
            
             $valuesArray["name"]= $Owner->getName();
@@ -36,19 +37,21 @@ class OwnerRepository implements IRepository
             $valuesArray["password"]= $Owner->getPassword();
             $valuesArray["petList"]= $Owner->getPetList();
             $valuesArray["reputation"]= $Owner->getReputation();
-            array_push($arraytoencode,$valuesArray);
+            array_push($arrayToEncode, $valuesArray);
         }
-        $jsoncontent= json_encode($arraytoencode, JSON_PRETTY_PRINT);
-        file_put_contents($this->FileName,$jsoncontent);
+        $jsonContent= json_encode($arrayToEncode, JSON_PRETTY_PRINT);
+        file_put_contents($this->fileName, $jsonContent);
     }
-    public function RetrieveData()
+    //JSON TO PHP
+    private function retrieveData()
     {
-        $this->OwnerList= array();
-        if(file_exists($this->FileName))
+        $this->ownerList= array();
+        if(file_exists($this->fileName))
         {
-            file_get_contents($this->FileName);
-            $arraytodecode= ($jsoncontent) ? json_decode($jsoncontent, true) : array();
-            foreach ($arraytodecode as $valuesArray) {
+            $jsonContent= file_get_contents($this->fileName);
+            $arrayToDecode= ($jsonContent) ? json_decode($jsonContent, true) : array();
+
+            foreach ($arrayToDecode as $valuesArray) {
                 $Owner= new Owner();
                 $Owner->setReputation($valuesArray["reputation"]);
                 $Owner->setPetList($valuesArray["petList"]);
@@ -57,12 +60,8 @@ class OwnerRepository implements IRepository
                 $Owner->setBirthDay($valuesArray["birthDay"]);
                 $Owner->setEmail( $valuesArray["email"]);
                 $Owner->setPassword($valuesArray["password"]);
-
-                array_push(this->OwnerList, $Owner);
-
-
+                array_push($this->ownerList, $Owner);
             }
-
         }
     }
 }
