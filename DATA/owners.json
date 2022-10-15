@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Maxi",
+        "lastName": "Herrera",
+        "birthDay": "2022-05-01",
+        "email": "qqq@qqq.com",
+        "password": "123",
+        "petList": null,
+        "reputation": null
+    }
+]

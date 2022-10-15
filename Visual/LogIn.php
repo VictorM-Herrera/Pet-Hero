@@ -11,10 +11,10 @@
 </head>
 <body>
     <div>
-        <form action="" method="post">
+        <form action="../Controller/login-action.php" method="post">
         <div>
             <label for="email">Email</label>
-            <input type="email" name="Email" required>
+            <input type="email" name="email" required>
         </div>
         <div>
             <label for="password">Password</label>
