@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogIn</title>
     <link rel="stylesheet" href="Visual/normalize.css">
+    <link rel="stylesheet" href="estilo.css">
     <link rel="icon" href="Visual/favicon.ico">
 </head>
 <body>
     <div>
-        <form action="" method="post">
+        <form action="../Controller/login-action.php" method="post">
         <div>
             <label for="email">Email</label>
-            <input type="email" name="Email" required>
+            <input type="email" name="email" required>
         </div>
         <div>
             <label for="password">Password</label>
             <input type="password" name="password" required>
         </div>
         <div>
-            <button type="submit">Ingresar</button>
+            <input type="submit" value="Ingresar">
         </div>
         </form>
     </div>
