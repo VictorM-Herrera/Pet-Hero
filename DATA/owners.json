@@ -7,5 +7,14 @@
         "password": "123",
         "petList": null,
         "reputation": null
+    },
+    {
+        "name": "jose",
+        "lastName": "marta",
+        "birthDay": "2022-10-13",
+        "email": "12@12.com",
+        "password": "123",
+        "petList": null,
+        "reputation": null
     }
 ]

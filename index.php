@@ -14,6 +14,5 @@
     <div class="signin-container">
         <a href="Visual/login.php">LogIn</a> <a href="Visual/signin.php">Sing In</a>
     </div>
-    
 </body>
 </html>
