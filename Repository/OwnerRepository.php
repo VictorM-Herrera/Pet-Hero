@@ -3,6 +3,7 @@ namespace Repository;
 require_once("..\Config\Autoload.php");
 
 use Models\Owner as Owner;
+use Models\Pet as Pet;
 class OwnerRepository
 {
     private $ownerList = array();
@@ -23,6 +24,7 @@ class OwnerRepository
         $this->retrieveData();
         return $this->ownerList;
     }
+
     //PHP TO JSON
     private function saveData()
     {
@@ -54,7 +56,12 @@ class OwnerRepository
             foreach ($arrayToDecode as $valuesArray) {
                 $Owner= new Owner();
                 $Owner->setReputation($valuesArray["reputation"]);
-                $Owner->setPetList($valuesArray["petList"]);
+                foreach($valuesArray["petList"] as $Pet){
+                    var_dump($Pet);
+                    echo "<br>";
+                    $Owner->addPet($Pet);
+                }
+                
                 $Owner->setName($valuesArray["name"]);
                 $Owner->setLastName($valuesArray["lastName"]);
                 $Owner->setBirthDay($valuesArray["birthDay"]);

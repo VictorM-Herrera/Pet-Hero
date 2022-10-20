@@ -20,7 +20,7 @@
             $loggedUser->setPassword($pass);
             $_SESSION["loggedUser"] = $loggedUser;
 
-            header("location: ../Visual/main.php");
+            header("location: ../Visual/mainWatcher.php");
         }
         if(call_user_func_array("searchRepository", array($ownerRepo->getAll(), $email, $pass)) == true)//si encuentra al usuario entre los cuidadores
         {
@@ -30,7 +30,7 @@
             $loggedUser->setPassword($pass);
             $_SESSION["loggedUser"] = $loggedUser;
 
-            header("location: ../Visual/main.php");
+            header("location: ../Visual/mainOwner.php");
 
         }
         if(call_user_func_array("searchRepository", array($ownerRepo->getAll(), $email, $pass)) != true && call_user_func_array("searchRepository", array($watcherRepo->getAll(), $email, $pass)) != true)

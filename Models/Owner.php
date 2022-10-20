@@ -2,16 +2,17 @@
 namespace Models;
 
 use Models\User as User;
+use Models\Pet as Pet;
 use Models\PetCollection as PetCollection;
 
 class Owner extends User{
     private $petList;
     private $reputation;//reputacion del dueño, (para saber si cumple con los pagos, y con los horarios)
-
     function __construct()
     {
-        $petList = new PetCollection();
+        $this->petList=array();
     }
+    
 
     public function getReputation()
     {
@@ -35,6 +36,10 @@ class Owner extends User{
         $this->petList = $petList;
 
         return $this;
+    }
+    public function addPet(Pet $pet)
+    {
+       array_push($this->petList,$pet);
     }
 }
 ?>
