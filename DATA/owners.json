@@ -1,21 +1,46 @@
 [
     {
-        "name": "Luciano",
-        "lastName": "Croci",
-        "birthDay": "2022-10-14",
-        "email": "lrcroci@gmail.com",
-        "password": "lc",
-        "petList": [],
+        "name": "jaja",
+        "lastName": "das",
+        "birthDay": "2022-09-16",
+        "email": "hola@hola.com",
+        "password": "123",
+        "petList": [
+            {
+                "name": "jasmin",
+                "age": "321",
+                "specie": "gato"
+            },
+            {
+                "name": "jasmin",
+                "age": "321",
+                "specie": "gato"
+            },
+            {
+                "name": "pee",
+                "age": "12",
+                "specie": "pex"
+            }
+        ],
         "reputation": null
     },
     {
-        "name": "Luciano",
-        "lastName": "Croci",
-        "birthDay": "2022-10-14",
-        "email": "lrcroci@gmail.com",
-        "password": "lc",
+        "name": "Maximiliano",
+        "lastName": "Herrera",
+        "birthDay": "2022-03-29",
+        "email": "123456@123456.com",
+        "password": "123",
         "petList": [
-            {}
+            {
+                "name": "Flaca",
+                "age": "321",
+                "specie": "gato"
+            },
+            {
+                "name": "Flaca",
+                "age": "321",
+                "specie": "gato"
+            }
         ],
         "reputation": null
     }

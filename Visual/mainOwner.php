@@ -13,11 +13,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>INICIO</title>
+    <link rel="stylesheet" href="owner-style.css">
 </head>
 <body>
-    <a href="NewPet.php">
-        agregar Mascota
-    </a>
+    <div class="header-box">
+        <header>
+            <div class="nav-box">
+                <nav>
+                    <a href="watcher-list.php">Listado de Guardianes</a>
+                    <a href="newPet.php">Agregar Mascota</a>
+                    <a href="#">ejemplo</a>
+                </nav>
+            </div>
+        </header>
+    </div>
 </body>
 </html>

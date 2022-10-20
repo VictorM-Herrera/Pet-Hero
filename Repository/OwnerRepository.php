@@ -24,7 +24,20 @@ class OwnerRepository
         $this->retrieveData();
         return $this->ownerList;
     }
+    //MODIFICAR JSON
+    public function modify($owner)//llega el usuario ya modificado y lo almaceno donde estaba el otro
+    {
+        $this->retrieveData();
+        var_dump($this->ownerList);
+        for($x=0; $x< count($this->ownerList);$x++){
+            if($this->ownerList[$x]->getEmail() == $owner->getEmail())
+            {
+                $this->ownerList[$x] = $owner;
+            }
+        }
+        $this->saveData();
 
+    }
     //PHP TO JSON
     private function saveData()
     {
@@ -37,7 +50,17 @@ class OwnerRepository
             $valuesArray["birthDay"]= $Owner->getBirthDay();
             $valuesArray["email"]= $Owner->getEmail();
             $valuesArray["password"]= $Owner->getPassword();
-            $valuesArray["petList"]= $Owner->getPetList();
+            $valuesArray["petList"]= array();
+            foreach($Owner->getPetList() as $petOwned)
+            {
+                
+                $petArray["name"]= $petOwned->getName();
+                $petArray["age"]= $petOwned->getAge();
+                $petArray["specie"]= $petOwned->getSpecie();
+                array_push($valuesArray["petList"], $petArray);
+            }                
+            
+
             $valuesArray["reputation"]= $Owner->getReputation();
             array_push($arrayToEncode, $valuesArray);
         }
@@ -56,12 +79,14 @@ class OwnerRepository
             foreach ($arrayToDecode as $valuesArray) {
                 $Owner= new Owner();
                 $Owner->setReputation($valuesArray["reputation"]);
-                foreach($valuesArray["petList"] as $Pet){
-                    var_dump($Pet);
-                    echo "<br>";
-                    $Owner->addPet($Pet);
+                $petAux= new Pet();
+                foreach($valuesArray["petList"] as $petOwned)
+                {
+                    $petAux->setName($petOwned["name"]);
+                    $petAux->setAge($petOwned["age"]);
+                    $petAux->setSpecie($petOwned["specie"]);
+                    $Owner->addPet($petAux);
                 }
-                
                 $Owner->setName($valuesArray["name"]);
                 $Owner->setLastName($valuesArray["lastName"]);
                 $Owner->setBirthDay($valuesArray["birthDay"]);

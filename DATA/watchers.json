@@ -8,15 +8,5 @@
         "petType": "perro",
         "expectedPay": "123",
         "reputation": null
-    },
-    {
-        "name": "r",
-        "lastName": "c",
-        "birthDay": "2022-10-04",
-        "email": "rc@gmail.com",
-        "password": "rc",
-        "petType": "gato",
-        "expectedPay": "200",
-        "reputation": null
     }
 ]

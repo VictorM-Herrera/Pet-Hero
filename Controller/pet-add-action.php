@@ -1,5 +1,4 @@
 <?php
-require_once("roam-array.php");
 require_once("../Config/Autoload.php");
 use Models\Pet as Pet;
 use Models\Owner as Owner;
@@ -12,38 +11,25 @@ if(isset($_SESSION["loggedUser"]))
 }else{
     header("location:login.php");
 }
+if($_POST)
+{
+    $nombre = $_POST["name"];
+    $especie = $_POST["specie"];
+    $edad = $_POST["age"];
 
-if($_POST){
-        $nombre = $_POST["Nombre"];
-        $especie = $_POST["Especie"];
-        $edad = $_POST["Edad"];
-        
-        $nuevaMascota= new Pet();
-        $nuevaMascota->setName($nombre);
-        $nuevaMascota->setSpecie($especie);
-        $nuevaMascota->setAge($edad);
-        
-        $ownerRepo = new OwnerRepository();
-        
-        foreach($ownerRepo->getAll() as $user)
+    $newPet= new Pet();
+    $newPet->setName($nombre);
+    $newPet->setSpecie($especie);
+    $newPet->setAge($edad);
+
+    $ownerRepo= new OwnerRepository();
+    foreach($ownerRepo->getAll() as $owner)
+    {
+        if($owner->getEmail() == $loggedUser->getEmail())
         {
-            if($user->getEmail() == $loggedUser->getEmail() && $user->getPassword() == $loggedUser->getPassword())
-            {
-                $user->addPet($nuevaMascota);
-                $ownerRepo->add($user);
-                
-            }
+            $owner->addPet($newPet);
+            $ownerRepo->modify($owner);
         }
-        //header("location:../Visual/mainOwner.php");
-        echo "<br>";
-        print_r($ownerRepo->getAll());
     }
-
-?>
-
-
-
-
-
-
-
+    header("location:../Visual/mainOwner.php");
+}
