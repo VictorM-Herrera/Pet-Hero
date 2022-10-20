@@ -22,7 +22,7 @@
             <div class="nav-box">
                 <nav>
                     <a href="watcher-list.php">Listado de Guardianes</a>
-                    <a href="newPet.php">Agregar Mascota</a>
+                    <a href="pet-list.php">Lista Mascotas</a>
                     <a href="#">ejemplo</a>
                 </nav>
             </div>

@@ -31,5 +31,5 @@ if($_POST)
             $ownerRepo->modify($owner);
         }
     }
-    header("location:../Visual/mainOwner.php");
+    header("location:../Visual/pet-list.php");
 }

@@ -28,7 +28,7 @@ class OwnerRepository
     public function modify($owner)//llega el usuario ya modificado y lo almaceno donde estaba el otro
     {
         $this->retrieveData();
-        var_dump($this->ownerList);
+        //var_dump($this->ownerList);
         for($x=0; $x< count($this->ownerList);$x++){
             if($this->ownerList[$x]->getEmail() == $owner->getEmail())
             {
@@ -79,9 +79,10 @@ class OwnerRepository
             foreach ($arrayToDecode as $valuesArray) {
                 $Owner= new Owner();
                 $Owner->setReputation($valuesArray["reputation"]);
-                $petAux= new Pet();
+                
                 foreach($valuesArray["petList"] as $petOwned)
                 {
+                    $petAux= new Pet();
                     $petAux->setName($petOwned["name"]);
                     $petAux->setAge($petOwned["age"]);
                     $petAux->setSpecie($petOwned["specie"]);
