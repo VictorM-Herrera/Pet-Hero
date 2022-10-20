@@ -8,5 +8,25 @@
         "petType": "perro",
         "expectedPay": "123",
         "reputation": null
+    },
+    {
+        "name": "m",
+        "lastName": "c",
+        "birthDay": "2112-03-12",
+        "email": "mc@f.com",
+        "password": "mc",
+        "petType": "lagarto",
+        "expectedPay": "400",
+        "reputation": null
+    },
+    {
+        "name": "roman",
+        "lastName": "riquelme",
+        "birthDay": "1121-03-12",
+        "email": "rr@boca.com",
+        "password": "rr",
+        "petType": "raton",
+        "expectedPay": "450",
+        "reputation": null
     }
 ]
