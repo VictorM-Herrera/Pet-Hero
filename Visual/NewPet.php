@@ -32,7 +32,9 @@
         </div>
         <div>
             <button type="submit">Enviar</button>
+            <button type="reset">Resetear</button>
         </div>
+        <a href="pet-list.php">Atrás</a>
         </form>
     </div>
 </body>

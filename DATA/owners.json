@@ -7,19 +7,19 @@
         "password": "123",
         "petList": [
             {
-                "name": "jasmin",
-                "age": "321",
-                "specie": "gato"
-            },
-            {
-                "name": "jasmin",
-                "age": "321",
-                "specie": "gato"
-            },
-            {
                 "name": "pee",
                 "age": "12",
                 "specie": "pex"
+            },
+            {
+                "name": "ortega",
+                "age": "34",
+                "specie": "burro"
+            },
+            {
+                "name": "messi",
+                "age": "36",
+                "specie": "pulga"
             }
         ],
         "reputation": null
@@ -32,14 +32,74 @@
         "password": "123",
         "petList": [
             {
-                "name": "Flaca",
-                "age": "321",
-                "specie": "gato"
+                "name": "rayo",
+                "age": "34",
+                "specie": "escarabajo"
             },
             {
-                "name": "Flaca",
-                "age": "321",
+                "name": "lola",
+                "age": "2",
+                "specie": "perra"
+            },
+            {
+                "name": "ricardo",
+                "age": "5",
                 "specie": "gato"
+            }
+        ],
+        "reputation": null
+    },
+    {
+        "name": "Luciano",
+        "lastName": "Croci",
+        "birthDay": "0002-04-23",
+        "email": "lrcroci@gmail.com",
+        "password": "lc",
+        "petList": [
+            {
+                "name": "qwe",
+                "age": "1",
+                "specie": "oruga"
+            },
+            {
+                "name": "cacho",
+                "age": "0",
+                "specie": "cahorro"
+            },
+            {
+                "name": "rocco",
+                "age": "5",
+                "specie": "caracol"
+            },
+            {
+                "name": "martin",
+                "age": "4",
+                "specie": "de"
+            }
+        ],
+        "reputation": null
+    },
+    {
+        "name": "r",
+        "lastName": "c",
+        "birthDay": "0002-03-12",
+        "email": "rc@gmail.com",
+        "password": "rc",
+        "petList": [
+            {
+                "name": "suarez",
+                "age": "32",
+                "specie": "tiburon"
+            },
+            {
+                "name": "neymar",
+                "age": "42",
+                "specie": "loro"
+            },
+            {
+                "name": "rampa",
+                "age": "23",
+                "specie": "tortuga"
             }
         ],
         "reputation": null

@@ -11,11 +11,7 @@
     }
     $list= new WatcherRepository();
     
-    foreach($list->getAll() as $watcher)
-    {
-        echo "<li>"."Nombre: " . $watcher->getName() ."</li>";
-    }
-?>
+   ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,24 +30,34 @@
                 <th>Paga</th>
                 <th>reputacion</th>
             </tr>
-            <tr>
-                <td>
-                    <?php
-                    echo $watcher->getName();
-                    ?>
-                </td>
-            </tr>
+            <tbody>                  
+                    
+                 <?php
+                    foreach ($list->getAll() as $guardian) { 
+                         ?>
+                         <tr>
+                            <td><?php echo $guardian->getName()?></td>
+                            <td><?php echo $guardian->getLastName()?></td>
+                            <td><?php echo $guardian->getPetType()?></td>
+                            <td><?php echo $guardian->getExpectedPay()?></td>
+                            <td><?php if($guardian->getReputation()==NULL)
+                            {echo "NULL";}else{
+                                echo $guardian->getReputation();
+                            }
+                            ?></td>
+                         </tr>
+                         <?php
+                        }
+                        ?>
+   
+                   
+                </tbody>
             <?php
-           /* for($x=0; $x<10;$x++){
-                echo "<tr>". 
-                "<td>". $watcher->getName()."</td>".
-                "<td>". $watcher->getLastName()."</td>".
-                "<td>". $watcher->getName()."</td>"
-                ."</tr>";
-            }
-            */
+           
             ?>
         </table>
     </section>
+    <a href="mainOwner.php">Atrás</a>
+
 </body>
 </html>
