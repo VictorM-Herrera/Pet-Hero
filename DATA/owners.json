@@ -20,6 +20,11 @@
                 "name": "messi",
                 "age": "36",
                 "specie": "pulga"
+            },
+            {
+                "name": "",
+                "age": "",
+                "specie": ""
             }
         ],
         "reputation": null
@@ -100,6 +105,21 @@
                 "name": "rampa",
                 "age": "23",
                 "specie": "tortuga"
+            }
+        ],
+        "reputation": null
+    },
+    {
+        "name": "Moni",
+        "lastName": "Argento",
+        "birthDay": "2022-10-02",
+        "email": "moni@gmail.com",
+        "password": "123",
+        "petList": [
+            {
+                "name": "fatiga",
+                "age": "12",
+                "specie": "perro"
             }
         ],
         "reputation": null
