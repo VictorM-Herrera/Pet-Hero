@@ -15,6 +15,7 @@ if($_POST)
         $watcher->setPassword($_POST["password"]);
         $watcher->setPetType($_POST["petType"]);
         $watcher->setExpectedPay($_POST["expectedPay"]);
+        $watcher->setAvailability(true);//true por defecto
         $list = new WatcherRepository();
         $list->add($watcher);
         //print_r($list->getAll());

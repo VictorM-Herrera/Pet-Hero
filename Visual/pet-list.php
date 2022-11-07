@@ -61,8 +61,6 @@ foreach($ownerRepo->getAll() as $owner)
                     </tr>
                 </thead>
                 <tbody>
-                    
-                    
                     <?php
                     foreach ($petlist as $mascota) { 
                          ?>
@@ -70,24 +68,17 @@ foreach($ownerRepo->getAll() as $owner)
                             <td><?php echo $mascota->getName()?></td>
                             <td><?php echo $mascota->getSpecie()?></td>
                             <td><?php echo $mascota->getAge()?></td>
-
-
-
                          </tr>
                          <?php
                         }
                         ?>
-   
-                   
                 </tbody>
-
             </table>
-
     </section>
     
     
 
-    <a href="NewPet.php">Nueva Mascota</a>
+    <a href="newPet.php">Nueva Mascota</a>
     <a href="mainOwner.php">Atrás</a>
     
 </body>

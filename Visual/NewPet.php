@@ -25,7 +25,10 @@
         </div>
         <div>
             <label for="specie">Especie</label>
-            <input type="text" name="specie" id="specie">            
+            <select name="specie" id="specie">
+                <option value="cat">gato</option>
+                <option value="dog">perro</option>
+            </select>           
         </div>
         <div>
             <label for="age">Edad</label>

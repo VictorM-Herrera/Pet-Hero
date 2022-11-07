@@ -7,6 +7,7 @@ class Watcher extends User
     private $petType;//tipo de mascota dispuesta a cuidar, ej: Juan perez, cuidador de loros(petType)
     private $expectedPay;//remuneracion que esperan cobrar (su precio)
     private $reputation;//reputacion del cuidador, indica si es bueno haciendo su trabajo. 
+    private $availability;//booleano, que indica si esta reservado o nel
     
     public function getPetType()
     {
@@ -40,6 +41,16 @@ class Watcher extends User
     public function setReputation($reputation)
     {
         $this->reputation = $reputation;
+
+        return $this;
+    }
+    public function getAvailability()
+    {
+        return $this->availability;
+    }
+    public function setAvailability($availability)
+    {
+        $this->availability = $availability;
 
         return $this;
     }

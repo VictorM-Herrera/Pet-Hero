@@ -46,7 +46,8 @@
                 <th>Apellido</th>
                 <th>Tipo de Mascota a cuidar</th>
                 <th>Paga</th>
-                <th>reputacion</th>
+                <th>Reputacion</th>
+                <th>Disponibilidad</th>
             </tr>
             <tbody>                  
                     
@@ -59,16 +60,19 @@
                             <td><?php echo $guardian->getPetType()?></td>
                             <td><?php echo $guardian->getExpectedPay()?></td>
                             <td><?php if($guardian->getReputation()==NULL)
-                            {echo "NULL";}else{
+                            {echo "no calificado";}else{
                                 echo $guardian->getReputation();
                             }
                             ?></td>
+                            <td><?php if($guardian->getAvailability() == false){
+                                    echo "Ocupado";
+                                }else{
+                                    echo "Disponible";
+                                }?></td>
                          </tr>
                          <?php
                         }
                         ?>
-   
-                   
                 </tbody>
             <?php
            

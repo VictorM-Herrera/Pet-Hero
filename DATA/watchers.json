@@ -1,42 +1,24 @@
 [
     {
-        "name": "Maxi",
-        "lastName": "Herrera",
-        "birthDay": "2002-04-07",
+        "name": "asd",
+        "lastName": "asd",
+        "birthDay": "2022-11-06",
         "email": "asd@asd.com",
         "password": "123",
-        "petType": "perro",
-        "expectedPay": "123",
-        "reputation": null
+        "petType": "dog",
+        "expectedPay": "500",
+        "reputation": null,
+        "availability": true
     },
     {
-        "name": "m",
-        "lastName": "c",
-        "birthDay": "2112-03-12",
-        "email": "mc@f.com",
-        "password": "mc",
-        "petType": "lagarto",
-        "expectedPay": "400",
-        "reputation": null
-    },
-    {
-        "name": "roman",
-        "lastName": "riquelme",
-        "birthDay": "1121-03-12",
-        "email": "rr@boca.com",
-        "password": "rr",
-        "petType": "raton",
-        "expectedPay": "450",
-        "reputation": null
-    },
-    {
-        "name": "pepe",
-        "lastName": "argento",
-        "birthDay": "2022-10-03",
-        "email": "pepe@gmail.com",
+        "name": "pedro",
+        "lastName": "lopez",
+        "birthDay": "2022-11-06",
+        "email": "lopez@gmail.com",
         "password": "123",
-        "petType": "Gato",
-        "expectedPay": "123",
-        "reputation": null
+        "petType": "cat",
+        "expectedPay": "10000",
+        "reputation": null,
+        "availability": true
     }
 ]

@@ -43,6 +43,7 @@ class WatcherRepository
                 $watcher->setBirthDay($valuesArray["birthDay"]);
                 $watcher->setEmail($valuesArray["email"]);
                 $watcher->setPassword($valuesArray["password"]);
+                $watcher->setAvailability($valuesArray["availability"]);
                 array_push($this->watcherList, $watcher);
             }
         }
@@ -61,6 +62,7 @@ class WatcherRepository
             $valuesArray["petType"]= $watcher->getPetType();
             $valuesArray["expectedPay"] = $watcher->getExpectedPay();
             $valuesArray["reputation"]= $watcher->getReputation();
+            $valuesArray["availability"] = $watcher->getAvailability();
             array_push($arrayToEncode, $valuesArray);
         }
         $jsonContent= json_encode($arrayToEncode, JSON_PRETTY_PRINT);
