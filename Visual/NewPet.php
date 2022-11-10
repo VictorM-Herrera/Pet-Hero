@@ -18,7 +18,7 @@
 </head>
 <body>
     <div>
-        <form action="../Controller/pet-add-action.php" method="post">
+        <form action="../Controllers/pet-add-action.php" method="post">
         <div>
             <label for="name">Nombre</label>
             <input type="text" name="name" id="name">

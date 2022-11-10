@@ -12,7 +12,7 @@
 </head>
 <body>
     <div>
-        <form action="../Controller/watcher-signin-action.php" method="post"><h1>Usted se esta registrando como guardian:</h1>
+        <form action="../Controllers/watcher-signin-action.php" method="post"><h1>Usted se esta registrando como guardian:</h1>
         <div>
                 <label for="name">Nombre</label>
                 <input type="text" name="name" placeholder="..." id="name" required>

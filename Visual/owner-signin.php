@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="signin-form">
-       <form action="../Controller/owner-signin-action.php" method="post">
+       <form action="../Controllers/owner-signin-action.php" method="post">
             <div>
                 <label for="name">Nombre</label>
                 <input type="text" name="name" placeholder="..." id="name" required>
