@@ -4,7 +4,7 @@ use Models\Owner as Owner;
 use DAO\Connection as Connection;
 use \Exception as Exception;
 
-class OwnerDao implements I_DAO
+class OwnerDao
 { 
         private $ownerList = array();
         private $tableName = "owners";
