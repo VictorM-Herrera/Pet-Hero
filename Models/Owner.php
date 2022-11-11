@@ -5,9 +5,14 @@ use Models\User as User;
 use Models\Pet as Pet;
 
 class Owner extends User{
-    private $petList = array();
+
+ 
+    private $id;
     private $reputation;//reputacion del dueño, (para saber si cumple con los pagos, y con los horarios)
 
+
+
+    
     public function getReputation()
     {
         return $this->reputation;
@@ -20,20 +25,26 @@ class Owner extends User{
         return $this;
     }
 
-    public function getPetList()
+  
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
     {
-        return $this->petList;
+        return $this->id;
     }
 
-    public function setPetList($petList)
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
     {
-        $this->petList = $petList;
+        $this->id = $id;
 
         return $this;
-    }
-    public function addPet(Pet $pet)
-    {
-        array_push($this->petList, $pet);
     }
 }
 ?>

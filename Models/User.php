@@ -5,6 +5,7 @@ abstract class User{
     private $lastName;
     private $birthDay;
     private $email;
+    private $dni;
     private $password;
  
     public function setUserId($userId)
@@ -70,6 +71,26 @@ abstract class User{
     public function setBirthDay($birthDay)
     {
         $this->birthDay = $birthDay;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dni
+     */ 
+    public function getDni()
+    {
+        return $this->dni;
+    }
+
+    /**
+     * Set the value of dni
+     *
+     * @return  self
+     */ 
+    public function setDni($dni)
+    {
+        $this->dni = $dni;
 
         return $this;
     }

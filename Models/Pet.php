@@ -3,8 +3,11 @@ namespace Models;
  class Pet
  {
     private $name;
+    private $id;
+    private $owner_id;
     private $age;
     private $specie;
+    private $size;
 
     public function getName()
     {
@@ -38,6 +41,46 @@ namespace Models;
     public function setSpecie($specie)
     {
         $this->specie = $specie;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of size
+     */ 
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Set the value of size
+     *
+     * @return  self
+     */ 
+    public function setSize($size)
+    {
+        $this->size = $size;
 
         return $this;
     }
