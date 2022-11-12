@@ -84,6 +84,26 @@ namespace Models;
 
         return $this;
     }
+
+    /**
+     * Get the value of owner_id
+     */ 
+    public function getOwner_id()
+    {
+        return $this->owner_id;
+    }
+
+    /**
+     * Set the value of owner_id
+     *
+     * @return  self
+     */ 
+    public function setOwner_id($owner_id)
+    {
+        $this->owner_id = $owner_id;
+
+        return $this;
+    }
  }
 
 

@@ -23,9 +23,7 @@ class OwnerController
 
             $owner = $owner_DAO->GetById($_SESSION["id"]);
 
-            echo "id: "$owner->getId();
-            echo "nombre: "$owner->getName();
-            echo "apellido: "$owner->getName();
+            
         }
         else
         {

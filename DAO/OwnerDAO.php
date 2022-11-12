@@ -6,14 +6,14 @@ use \Exception as Exception;
 
 class OwnerDao
 { 
-        private $ownerList = array();
-        private $tableName = "owners";
-        private $connection;
+       
+        
+    private $connection;
 
     public function Add(Owner $owner)
     {
        try {
-        $query= "INSERT INTO".$this->tableName." (idowners, name, lastName, birthDay, email, dni, reputation, password) VALUES (:idowners, :name, :lastName, :birthDay, :email, :dni, :reputation, :password);"
+        $query= "INSERT INTO owners (idowners, name, lastName, birthDay, email, dni, reputation, password) VALUES (:idowners, :name, :lastName, :birthDay, :email, :dni, :reputation, :password);"
                         
             $parameters['idowners'] = $owner->getId();
             $parameters['name'] = $owner->getName();
@@ -39,7 +39,7 @@ class OwnerDao
         try
         {
             $this->connection = Connection::GetInstance();
-            $query = "SELECT * FROM".$this->tableName;
+            $query = "SELECT * FROM owners";
             $resultSet = $this->connection->Execute($query);
                 
             foreach ($resultSet as $row) 
@@ -76,7 +76,7 @@ class OwnerDao
         try
         {
             $this->connection = Connection::GetInstance();
-            $query = "SELECT * FROM".$this->tableName "WHERE idowners ='$id'";
+            $query = "SELECT * FROM owners WHERE idowners ='$id'";
             $resultSet = $this->connection->Execute($query);
                 
             foreach ($resultSet as $row) 
@@ -84,7 +84,7 @@ class OwnerDao
                 $owner= $this->LoadData($row);
                 array_push($ownersList, $owner);
             }
-            return $ownersList;    
+            return $ownersList[0];    
         }
         catch (Exception $e)
         {
