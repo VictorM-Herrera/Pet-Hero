@@ -1,117 +1,111 @@
 <?php
-    namespace DAO;
-
-
-    use Models\Watcher as Watcher;
-    use DAO\Connection as Connection;
-    use \Exception as Exception;
-
-    class WatcherDAO
-    {
-        private $connection;
-
-        public function Add(Watcher $watcher)
+ namespace DAO;
+ use Models\Watcher as Watcher;
+ use DAO\Connection as Connection;
+ use \Exception as Exception;
+ 
+ class WatcherDao
+ { 
+        
+         
+     private $connection;
+ 
+     public function Add(Watcher $watcher)
+     {
+        try {
+         $query= "INSERT INTO watchers (idwatchers, name, lastName, birthDay, email, dni, reputation, password, petType, expectedPay, sizecare) VALUES (:idwatchers, :name, :lastName, :birthDay, :email, :dni, :reputation, :password, :petType, :expectedPay, :sizecare);"
+                         
+             $parameters['idwatchers'] = $watcher->getId();
+             $parameters['name'] = $watcher->getName();
+             $parameters['lastName'] = $watcher->getLastName();
+             $parameters['birthDay'] = $watcher->getBirthDay();
+             $parameters['email'] = $watcher->getEmail();
+             $parameters['dni'] = $watcher->getDni();         
+             $parameters['reputation'] = $watcher->getReputation();
+             $parameters['password'] = $watcher->getPassword();
+             $parameters['petType'] = $watcher->getPetType();
+             $parameters['expectedPay'] = $watcher->getExpectedPay();
+             $parameters['sizecare'] = $watcher->getSizecare();
+         
+             $this->connection = Connection::GetInstance();
+             $this->connection->ExecuteNonQuery($query, $parameters);
+        }catch (Exception $e)
         {
-            try
-            {
-                $this->connection = Connection::GetInstance();
+            throw $e;
+        }              
+             
+     }
+     public function GetAll()
+     {
+         $watchersList = array();
+ 
+         try
+         {
+             $this->connection = Connection::GetInstance();
+             $query = "SELECT * FROM watchers";
+             $resultSet = $this->connection->Execute($query);
+                 
+             foreach ($resultSet as $row) 
+             {
+                 $watcher= $this->LoadData($row);
+                 array_push($watchersList, $watcher);
+             }
+             return $watchersList;    
+         }
+         catch (Exception $e)
+         {
+             throw $e;
+         }
+ 
+         
+     }
+     public function LoadData($resultSet)
+     {
+         $watcher = new Watcher();
+         $watcher->setId($resultSet['idwatchers']);
+         $watcher->setName($resultSet['name']);
+         $watcher->setLastName($resultSet['lastName'] );
+         $watcher->setBirthDay($resultSet['birthDay']);
+         $watcher->setEmail($resultSet['email']);
+         $watcher->setDni($resultSet['dni']);         
+         $watcher->setReputation($resultSet['reputation']);
+         $watcher->setPassword($resultSet['password']);
+         $watcher->setPetType($parameters['petType']);
+         $watcher->setExpectedPay($parameters['expectedPay']);
+         $watcher->getSizecare($parameters['sizecare']);
+         return $watcher;
+     }
+     public function GetById($id){
+ 
+         $watchersList = array();
+ 
+         try
+         {
+             $this->connection = Connection::GetInstance();
+             $query = "SELECT * FROM watchers WHERE idwatchers ='$id'";
+             $resultSet = $this->connection->Execute($query);
+                 
+             foreach ($resultSet as $row) 
+             {
+                 $watcher= $this->LoadData($row);
+                 array_push($watchersList, $watcher);
+             }
+             return $watchersList[0];    
+         }
+         catch (Exception $e)
+         {
+             throw $e;
+         }
+     }
+ }
+ 
+ 
+     
+ 
+ 
+ 
 
-                $query = "INSERT INTO guardians (first_name, last_name, dni, telephone, address, email, pass, id_size_care, cost)
-                      VALUES (:first_name, :last_name, :dni, :telephone, :address, :email, :pass, :id_size_care, :cost)";
-
-                $parameters['first_name'] = $guardian->getName();
-                $parameters['last_name'] = $guardian->getLast_name();
-                $parameters['dni'] = $guardian->getDni();
-                $parameters['telephone'] = $guardian->getTelephone();
-                $parameters['address'] = $guardian->getAddress();
-                $parameters['email'] = $guardian->getEmail();
-                $parameters['pass'] = $guardian->getPassword();
-                $parameters['id_size_care'] = $guardian->getSizeCare();
-                $parameters['cost'] = $guardian->getCost();
-
-            $this->connection->ExecuteNonQuery($query, $parameters);
-            }
-            catch (Exception $e)
-            {
-                throw $e;
-            }
-        }
-
-        public function GetAll()
-        {
-            $guardList = array();
-
-            try
-            {
-                $this->connection = Connection::GetInstance();
-                $query = "SELECT * FROM guardians";
-                $rta = $this->connection->Execute($query);
-            }
-            catch (Exception $e) 
-            {
-                throw $e;
-            }
-
-            if(!empty($rta))
-            {
-                foreach ($rta as $row) 
-                {
-                    $guardian = $this->map($row);
-                    array_push($guardList, $guardian);
-                }
-            }
-
-            return $guardList;
-        }
-
-        public function GetById($id){
-
-            $guardList = array();
-
-            try {
-                $this->connection = Connection::GetInstance();
-                $query = "SELECT * FROM guardians WHERE id_guardian = '$id' ";
-                $rta = $this->connection->Execute($query);
-            } 
-            catch (Exception $e) 
-            {
-                throw $e;
-            }
-
-            if(!empty($rta))
-            {
-                foreach ($rta as $row) 
-                {
-                    $guardian = $this->map($row);
-                    array_push($guardList, $guardian);
-                }
-
-                return $guardList[0];  
-            }
-            else
-            {
-                return null;
-            }
-        }
-        protected function map ($rta)
-        {
-            $guardian = new Guardian;
-
-            $guardian->setId_guardian($rta['id_guardian']);
-            $guardian->setName($rta['first_name']);
-            $guardian->setLast_name($rta['last_name']);
-            $guardian->setDni($rta['dni']);
-            $guardian->setTelephone($rta['telephone']);
-            $guardian->setAddress($rta['address']);
-            $guardian->setEmail($rta['email']);
-            $guardian->setPassword($rta['pass']);
-            $guardian->setSizeCare($this->GetSize($rta['id_size_care']));
-            $guardian->setCost($rta['cost']);
-            
-            return $guardian;
-
-    }
-}
+    
 
 
 
